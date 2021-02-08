@@ -88,8 +88,7 @@ function deleteOne(str,bool){
 */
 function onlyLetters(str){
     return str.replace(/\s([0-9])\w+/g,"")
-}
-
+}console.log(onlyLetters("I love 123 whatever"))
 /* Ex.6 
    Write the function isThisAnEmail that receives a string and returns true if the string is a valid email.
 */
@@ -124,6 +123,7 @@ function rollTheDices(num){
 
     return [sum,arr]
 }
+console.log(rollTheDices(6));
 
 
 /* Ex.9
@@ -268,9 +268,7 @@ function searchAndDivide(arr,str){
 function deleteX(arr,num){
     // let result = []
    let arr1=arr.slice(0,num)
-// console.log(arr1);
    let arr2= arr.slice(num+1,arr.length)
-//    console.log(arr2);
    return arr1.concat(arr2)
 }
 

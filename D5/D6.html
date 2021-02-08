@@ -1,0 +1,264 @@
+<!-- You have been assigned to the creation of a Smartphone Shop Website. 
+The homepage you're about to write is just a showcase of the products 
+of the shop with some extra information. 
+No shopping cart / checkout features are required.
+
+Complete exercises from 1 to 6 with plain HTML.
+
+EX1.: Add H1 title with the name of the shop
+
+EX2.: Add a TABLE with the top 5 products of the shop
+
+EX3.: Each product should have one image, title, description and price
+
+EX4.: Add the links to Amazon products for each item in the table
+
+EX5.: Add a footer with the address and the name of the shop
+
+EX6.: Add a message board where the user can type a message in it
+
+EXTRA (use JS here)
+
+EX7.: Write a function to change the H1 text =>
+
+EX8.: Write a function to change the page background color =>
+
+EX9.: Write a function to change the footer address with a fake one =>
+
+EX10.: Write a function to add a CSS class to every Amazon link =>
+
+EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
+
+EX12: Write a function to color the price of every product in a different one every time -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Shopping Cart</title>
+
+    <style>
+      a {
+        color: black;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="mainhead">The Bill's Shop</h1>
+    <table id="newsTable" cellpadding="0" border="0">
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <th>
+          <a
+            href="https://www.amazon.in/Apple-iPhone-Black-32GB-Storage/dp/B01LZKSVRB/ref=sr_1_1?dchild=1&qid=1612786471&refinements=p_n_operating_system_browse-bin%3A1485080031&rnid=1485076031&s=electronics&sr=1-1"
+            >Iphone7</a
+          >
+        </th>
+        <th>
+          <p>
+            iPhone 7 features a 12MP camera with 4K video and optical image
+            stabilization, a 4.7-inch Retina HD display with wide color gamut,
+            Touch ID, A10 Fusion chip for high performance, great battery life,
+            and water and dust resistance.
+          </p>
+        </th>
+        <th>
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/41D9NDiSzjL._SL1024_.jpg"
+            alt="iphone7"
+          />
+        </th>
+        <th class="price">₹ 23,989.00</th>
+      </tr>
+      <tr>
+        <th>
+          <a
+            href="https://www.amazon.in/dp/B072BXZWFZ?ref=ods_ucc_kindle_B072BXZWFZ_rc_nd_ucc"
+            >Iphone8</a
+          >
+        </th>
+        <th>
+          <p>
+            12MP primary camera with optical image stabilisation, Digital zoom
+            up to 5x, Quad-LED True Tone flash and Slow sync, 4K video recording
+            at 30 fps or 60 fps and slow-motion video recording in 1080p at 120
+            fps, 7MP front facing FaceTime HD camera with Retina Flash 4.7-inch
+            (diagonal) widescreen with Retina HD Display, LCD Multi‑Touch
+            display with IPS technology, 1334x750-pixel resolution at 326 ppi
+            with 1400:1 contrast ratio (typical), 3D touch with True Tone
+            display iOS 11 and iCloud operating system with A11 Bionic chip with
+            64-bit architecture and neural engine embeded with M11 motion
+            coprocessor, 32GB internal memory and single Nano-SIM Non-removable
+            Li-Ion 1960 mAh battery (7.55 Wh) providing talktime up to 14 hours
+            Wireless charging, Splash, Water and Dust resistant 1 year
+            manufacturer warranty for device and in-box accessories including
+            batteries from the date of purchase.
+          </p>
+        </th>
+        <th>
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/51fqTrJaTvL._SL1024_.jpg"
+            alt="iphone11"
+          />
+        </th>
+        <th class="price">₹ 44,990.00</th>
+      </tr>
+      <tr>
+        <th>
+          <a
+            href="https://www.amazon.in/New-Apple-iPhone-11-64GB/dp/B08L8DV7BX/ref=sr_1_2?dchild=1&qid=1612786471&refinements=p_n_operating_system_browse-bin%3A1485080031&rnid=1485076031&s=electronics&sr=1-2"
+            >Iphone11</a
+          >
+        </th>
+        <th>
+          <p>
+            6.1-inch (15.5 cm) Liquid Retina HD LCD display Water and dust
+            resistant (2 meters for up to 30 minutes, IP68) Dual-camera system
+            with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode,
+            and 4K video up to 60fps 12MP TrueDepth front camera with Portrait
+            mode, 4K video, and Slo-Mo Face ID for secure authentication A13
+            Bionic chip with third-generation Neural Engine Fast-charge capable
+            Wireless charging As part of our efforts to reach our environmental
+            goals, iPhone no longer includes a power adapter or EarPods. Please
+            use your existing Apple power adapter and headphones or buy these
+            accessories separately iOS 14 with redesigned widgets on the Home
+            screen, all-new App Library, App Clips, and more
+          </p>
+        </th>
+        <th>
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/71i2XhHU3pL._SL1500_.jpg"
+            alt="iphone11"
+          />
+        </th>
+        <th class="price">₹ 51,999.00</th>
+      </tr>
+      <tr>
+        <th><a href="https://www.amazon.in/dp/B08L5WHFT9">Iphone12</a></th>
+        <th>
+          <p>
+            6.1-inch Super Retina XDR display Ceramic Shield, tougher than any
+            smartphone glass A14 Bionic chip, the fastest chip ever in a
+            smartphone Advanced dual-camera system with 12MP Ultra Wide and Wide
+            cameras; Night mode, Deep Fusion, Smart HDR 3, 4K Dolby Vision HDR
+            recording 12MP TrueDepth front camera with Night mode, 4K Dolby
+            Vision HDR recording Industry-leading IP68 water resistance Supports
+            MagSafe accessories for easy attach and faster wireless charging iOS
+            with redesigned widgets on the Home screen, all-new App Library, App
+            Clips and more
+          </p>
+        </th>
+        <th>
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/71ZOtNdaZCL._SL1500_.jpg"
+            alt="iphone12"
+          />
+        </th>
+        <th class="price">₹ 79,686.00</th>
+      </tr>
+      <tr>
+        <th>
+          <a href="https://www.amazon.in/dp/B08L5S9TL1?th=1">Iphone12 pro</a>
+        </th>
+        <th>
+          <p>
+            6.1-inch Super Retina XDR display Ceramic Shield, tougher than any
+            smartphone glass A14 Bionic chip, the fastest chip ever in a
+            smartphone Pro camera system with 12MP Ultra Wide, Wide and
+            Telephoto cameras; 4x optical zoom range; Night mode, Deep Fusion,
+            Smart HDR 3, Apple ProRAW, 4K Dolby Vision HDR recording LiDAR
+            Scanner for improved AR experiences, Night mode portraits 12MP
+            TrueDepth front camera with Night mode, 4K Dolby Vision HDR
+            recording Industry-leading IP68 water resistance Supports MagSafe
+            accessories for easy attach and faster wireless charging iOS with
+            redesigned widgets on the Home screen, all-new App Library, App
+            Clips and more
+          </p>
+        </th>
+        <th>
+          <img
+            src="https://m.media-amazon.com/images/I/71YlH-4MUQL._SL1500_.jpg"
+            alt="iphone12 pro"
+          />
+        </th>
+        <th class="price">₹ 1,49,900.00</th>
+      </tr>
+    </table>
+    <div>
+      <h2>Contact us</h2>
+      <form>
+        <label for="fname">First name:</label><br />
+        <input type="text" id="fname" name="fname" /><br />
+        <label for="lname">Last name:</label><br />
+        <input type="text" id="lname" name="lname" /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br />
+        <label for="message">Write your message:</label><br />
+        <textarea rows="4" cols="50" name="message"> </textarea>
+      </form>
+    </div>
+    <script>
+      let changeHeading = () => {
+        document.getElementById("mainhead").style.color = "Red";
+      };
+      let backgroundChange = () => {
+        document.body.style.background = "yellow";
+      };
+      let changeOfAddress = () => {
+        document.getElementsByClassName("address")[0].innerHTML =
+          "Unicka 5 poland lublin";
+      };
+      let addCss = () => {
+        let x = document.getElementsByTagName("a");
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.color = "red";
+        }
+      };
+      let hideImage = () => {
+        let x = document.getElementsByTagName("img");
+        console.log(x);
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.visibility = "hidden";
+        }
+      };
+
+      let changePriceColor = () =>{
+          let x = document.getElementsByClassName("price")
+          let colors = ["red","blue","green","orange","black"]
+          console.log(x);
+          let ran = Math.floor(Math.random() * Math.floor(colors.length))
+          for (let i = 0; i < x.length; i++) {
+              console.log(colors[ran]);
+          x[i].style.color=colors[ran]
+        }
+      }
+
+    </script>
+  </body>
+  <footer>
+    <p>The Bill's Shop</p>
+    <p class="address">Address: Unicka 3 Lublin Poland</p>
+  </footer>
+</html>

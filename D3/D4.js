@@ -92,6 +92,9 @@ str = str.split(" ")
 return str.map((str1)=>{return str1[0].toUpperCase()+str1.substring(1)}).join(" ")
 
 }
+
+
+
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
@@ -111,6 +114,31 @@ function giveMeRandom(num){
 
 /* WRITE YOUR CODE HERE */
 
-/* WHEN YOU ARE FINISHED
-Commit and push the code to your personal GitHub repository and share the link to your commit in Eduflow.
-*/
+// /* WHEN YOU ARE FINISHED
+// Commit and push the code to your personal GitHub repository and share the link to your commit in Eduflo
+
+// function rev(str){
+//     let x=[]
+//     for(let i=str.length;i>=0; i--){
+//         x.push(str[i]);
+//     }
+//     return x.join("")
+// }
+// console.log(rev("hello"));
+
+function reverseStr(string){
+return string===""?"":reverseStr(string.substring(1))+string.charAt(0)
+
+}
+console.log(reverseStr("Viren"));
+
+function re(str){
+    if(str===""){
+        return str
+    }
+    else{
+         let t=str.substring(1)
+         return t  +str.charAt(0)
+    }
+}
+console.log(re("patil"));
