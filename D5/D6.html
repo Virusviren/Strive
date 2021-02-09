@@ -29,7 +29,7 @@ EX10.: Write a function to add a CSS class to every Amazon link =>
 
 EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
 
-EX12: Write a function to color the price of every product in a different one every time -->
+EX12: Write a function to color the price of every product in a different one every time  -->
 
 <!DOCTYPE html>
 
@@ -244,17 +244,22 @@ EX12: Write a function to color the price of every product in a different one ev
         }
       };
 
-      let changePriceColor = () =>{
-          let x = document.getElementsByClassName("price")
-          let colors = ["red","blue","green","orange","black"]
-          console.log(x);
-          let ran = Math.floor(Math.random() * Math.floor(colors.length))
+      let changePriceColor = () => {
+        
+        let colors = ["red", "blue", "green", "orange", "black"];
+        let x = document.getElementsByClassName("price");
+        // console.log(x);
+        let ran = Math.floor(Math.random() * Math.floor(colors.length));
+        let ran1 = Math.floor(Math.random() * Math.floor(x.length));
+        console.log(ran1);
+    
+        
           for (let i = 0; i < x.length; i++) {
-              console.log(colors[ran]);
-          x[i].style.color=colors[ran]
-        }
-      }
-
+            x[i].style.color = colors[ran];
+          }
+        
+         
+      };
     </script>
   </body>
   <footer>
