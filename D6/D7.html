@@ -56,7 +56,7 @@
         let tag = document.createElement("p");
         let text = document.createTextNode(content);
         tag.appendChild(text);
-        let element = document.querySelector("div")
+        let element = document.querySelector("div");
         element.appendChild(tag);
       }
 
@@ -65,7 +65,7 @@
         */
 
       function firstUlDisappear() {
-       document.getElementById("firstList").style.display="none"
+        document.getElementById("firstList").style.display = "none";
       }
 
       /* EXERCISE 8
@@ -73,11 +73,10 @@
         */
 
       function paintItGreen() {
-        let x = document.getElementsByTagName("ul")
-        for(let i=0; i<x.length;i++){
-          x[i].style.backgroundColor="green"
+        let x = document.getElementsByTagName("ul");
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.backgroundColor = "green";
         }
-        
       }
 
       /* EXERCISE 9
@@ -85,9 +84,9 @@
         */
 
       function makeItClickable() {
-        document.querySelector("h1").addEventListener("click",onClick())
-        function onClick(){
-          document.querySelector("h1").style.color="red"
+        document.querySelector("h1").addEventListener("click", onClick());
+        function onClick() {
+          document.querySelector("h1").style.color = "red";
         }
       }
 

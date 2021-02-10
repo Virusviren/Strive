@@ -245,20 +245,16 @@ EX12: Write a function to color the price of every product in a different one ev
       };
 
       let changePriceColor = () => {
-        
         let colors = ["red", "blue", "green", "orange", "black"];
         let x = document.getElementsByClassName("price");
         // console.log(x);
         let ran = Math.floor(Math.random() * Math.floor(colors.length));
         let ran1 = Math.floor(Math.random() * Math.floor(x.length));
         console.log(ran1);
-    
-        
-          for (let i = 0; i < x.length; i++) {
-            x[i].style.color = colors[ran];
-          }
-        
-         
+
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.color = colors[ran];
+        }
       };
     </script>
   </body>
