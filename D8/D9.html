@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA: 
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+  <head>
+    <title>Bingo Game</title>
+    <style>
+      body {
+        background-color: #f8f8f8;
+        font-family: fantasy;
+        color: black;
+        max-width: max-content;
+        margin: 0 auto;
+        font-size: 10px;
+      }
+      h1 {
+        font-size: 64px;
+      }
+      #mainTable {
+        background-color: grey;
+        color: white;
+        border: 6px solid grey;
+        border-radius: 8px;
+        height: 100%;
+        width: 100%;
+      }
+      .number {
+        display: inline-block;
+        width: 14%;
+        text-align: center;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bingo Game</h1>
+    <div id="mainTable"></div>
+    <input
+      class="buttons"
+      type="button"
+      value="Remove Last Task"
+      onclick="removeLast()"
+    />
+  </body>
+  <script>
+    function bingoNumbers() {}
+    window.onload = function () {
+      let bingo = document.querySelector("#mainTable");
+      for (let i = 0; i < 76; i++) {
+        const child = document.createElement("div");
+        child.className = "number";
+        const numberElement = document.createElement("h3");
+        const number = i + 1;
+        numberElement.innerHTML = number;
+        child.appendChild(numberElement);
+        bingo.appendChild(child);
+      }
+    };
+  </script>
+</html>

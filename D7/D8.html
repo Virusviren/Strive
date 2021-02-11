@@ -38,7 +38,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     </style>
   </head>
   <body>
-    <h1>Welcome to your personal Task List!</h1>
+    <h1 id="heading">Welcome to your personal Task List!</h1>
     <br />
 
     <span
@@ -97,7 +97,22 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
           - Use the document.createElement to create the new List Item
           - Append the child to the UL
       */
-      function addNewTask() {
+
+      function makeHeadClick() {
+        let x = document.getElementById("heading").innerHTML;
+        document
+          .getElementsByTagName("h1")[0] C
+          .addEventListener("mouseover", () => {
+            document.getElementById("heading").innerHTML = "Hello Viren";
+          });
+        document
+          .getElementsByTagName("h1")[0]
+          .addEventListener("mouseout", () => {
+            document.getElementById("heading").innerHTML = x;
+          });
+      }
+      makeHeadClick();
+      function addNewTask(e) {
         let task = document.getElementById("newTask").value;
         // console.log(task);
         let ul = document.getElementById("myTaskList");
@@ -143,10 +158,12 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       */
       function changeTaskBackgroundColor() {
         let x = document.getElementById("colorPicker").value;
-        let list = document.getElementById("myTaskList").querySelectorAll("li");
-        for (let i = 0; i < list.length; i++) {
-          list[i].style.backgroundColor = x;
-        }
+        let list = (document.getElementById(
+          "myTaskList"
+        ).style.backgroundColor = "red");
+        // for (let i = 0; i < list.length; i++) {
+        //   list[i].style.backgroundColor = x;
+        // }
       }
 
       /* EXTRA */
@@ -177,7 +194,6 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
           }
         } while (swapped);
         console.log(arr);
-        // return arr;
       }
     </script>
   </body>
