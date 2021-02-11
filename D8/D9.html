@@ -17,9 +17,9 @@
         background-color: #f8f8f8;
         font-family: fantasy;
         color: black;
-        max-width: max-content;
+        max-width: 768px;
         margin: 0 auto;
-        font-size: 10px;
+        font-size: 25px;
       }
       h1 {
         font-size: 64px;
@@ -34,9 +34,19 @@
       }
       .number {
         display: inline-block;
-        width: 14%;
+        width: 5%;
         text-align: center;
-        height: 100px;
+        height: 70px;
+        /* border: 1px solid white; */
+      }
+      .selectedNumber {
+        border: 1px solid white;
+      }
+      .buttons {
+        color: white;
+        background-color: grey;
+        border-radius: 5px;
+        box-shadow: none;
       }
     </style>
   </head>
@@ -46,17 +56,20 @@
     <input
       class="buttons"
       type="button"
-      value="Remove Last Task"
-      onclick="removeLast()"
+      value="Random number"
+      onclick="test()"
     />
   </body>
   <script>
-    function bingoNumbers() {}
     window.onload = function () {
       let bingo = document.querySelector("#mainTable");
       for (let i = 0; i < 76; i++) {
         const child = document.createElement("div");
         child.className = "number";
+
+        let ran = Math.floor(Math.random() * Math.floor(77));
+        let selectedNumber = document.querySelector(".selectedNumber");
+
         const numberElement = document.createElement("h3");
         const number = i + 1;
         numberElement.innerHTML = number;
@@ -64,5 +77,17 @@
         bingo.appendChild(child);
       }
     };
+    function test() {
+      let ran = Math.floor(Math.random() * Math.floor(77));
+      console.log("hello");
+      let selectedNumber = document.querySelector(".selectedNumber");
+      if (selectedNumber) {
+        selectedNumber.classList.remove("selectedNumber");
+      } else {
+        document
+          .getElementsByClassName("number")
+          [ran].classList.add("selectedNumber");
+      }
+    }
   </script>
 </html>
