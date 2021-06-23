@@ -1,13 +1,1 @@
-[
-  {
-    "FirstName": "timmy",
-    "Age": "20",
-    "LastName": "trumpet",
-    "email": "virenpatil1@outlook.com",
-    "DOB": "19th-October-1997",
-    "_id": "1cogockjxkq85qlm5",
-    "CreatedAT": "2021-06-22T14:43:11.212Z",
-    "avatar": "https://eu.ui-avatars.com/api/?name=timmy+trumpet",
-    "updatedAt": "2021-06-22T14:53:26.462Z"
-  }
-]
+[{"FirstName":"dave","Age":"20","LastName":"trumpet","email":"virenpatil1@outlook.com","DOB":"19th-October-1997","_id":"1cogockjxkq85qlm5","CreatedAT":"2021-06-22T14:43:11.212Z","avatar":"https://eu.ui-avatars.com/api/?name=dave+undefined","updatedAt":"2021-06-22T15:22:30.371Z"}]

@@ -3,17 +3,18 @@ import fs from "fs";
 import path, { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import uniqid from "uniqid";
+import {checkBlogPostSchema,checkValidationResult} from "./validation.js"
 
 const router = express.Router();
 
 const currentFilePath = fileURLToPath(import.meta.url);
 const currentFolderPath = dirname(currentFilePath);
-const authorsJsonPath = path.join(currentFolderPath, "authors.json");
+const blogsJsonPath = path.join(currentFolderPath, "blogs.json");
 
-// TO Get the all authors available in the Database
+// TO Get the all blogs available in the Database
 router.get("/", async (req, res, next) => {
   try {
-    const fileAsBuffer = fs.readFileSync(authorsJsonPath);
+    const fileAsBuffer = fs.readFileSync(blogsJsonPath);
     const fileAsString = fileAsBuffer.toString();
     const fileAsJson = JSON.parse(fileAsString);
     console.log(typeof fileAsJson);
@@ -27,10 +28,10 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const fileAsBuffer = fs.readFileSync(authorsJsonPath);
+    const fileAsBuffer = fs.readFileSync(blogsJsonPath);
     const fileAsString = fileAsBuffer.toString();
     const fileAsJson = JSON.parse(fileAsString);
-    const author = fileAsJson.find((authors) => authors._id === req.params.id);
+    const author = fileAsJson.find((blogs) => blogs._id === req.params.id);
     if (!author) {
       res
         .status(404)
@@ -42,20 +43,20 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// To create the new author
-router.post("/", async (req, res, next) => {
+// To create the new blog
+router.post("/",checkBlogPostSchema,checkValidationResult,async (req, res, next) => {
   try {
     //  const avatar = `https://eu.ui-avatars.com/api/?name=${req.body.FirstName}+${req.body.LastName}`;
-    const newAuthor = {
+    const blog = {
       ...req.body,
       _id: uniqid(),
-      CreatedAT: new Date(),
-      avatar: `https://eu.ui-avatars.com/api/?name=${req.body.FirstName}+${req.body.LastName}`,
+      createdAt: new Date(),
+      
     };
-    const oldAuthors = JSON.parse(fs.readFileSync(authorsJsonPath));
-    oldAuthors.push(newAuthor);
-    fs.writeFileSync(authorsJsonPath, JSON.stringify(oldAuthors));
-    res.send(newAuthor);
+    const oldblogs = JSON.parse(fs.readFileSync(blogsJsonPath));
+    oldblogs.push(blog);
+    fs.writeFileSync(blogsJsonPath, JSON.stringify(oldblogs));
+    res.send(blog);
   } catch (error) {
     res.sendStatus(status);
   }
@@ -65,17 +66,17 @@ router.post("/", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    const fileAsBuffer = fs.readFileSync(authorsJsonPath);
+    const fileAsBuffer = fs.readFileSync(blogsJsonPath);
     const fileAsString = fileAsBuffer.toString();
     let fileAsJson = JSON.parse(fileAsString);
-    const author = fileAsJson.find((authors) => authors._id === req.params.id);
+    const author = fileAsJson.find((blogs) => blogs._id === req.params.id);
     if (!author) {
       res
         .status(404)
         .send({ message: `Author with ${req.params.id} is not found!` });
     }
-    fileAsJson = fileAsJson.filter((authors) => authors._id !== req.params.id);
-    fs.writeFileSync(authorsJsonPath, JSON.stringify(fileAsJson));
+    fileAsJson = fileAsJson.filter((blogs) => blogs._id !== req.params.id);
+    fs.writeFileSync(blogsJsonPath, JSON.stringify(fileAsJson));
     res.status(204).send();
   } catch (error) {
     res.sendStatus(status);
@@ -86,11 +87,11 @@ router.delete("/:id", async (req, res, next) => {
 
 router.put("/:id", async (req, res, next) => {
   try {
-    const fileAsBuffer = fs.readFileSync(authorsJsonPath);
+    const fileAsBuffer = fs.readFileSync(blogsJsonPath);
     const fileAsString = fileAsBuffer.toString();
     let fileAsJson = JSON.parse(fileAsString);
     const authorIndex = fileAsJson.findIndex(
-      (authors) => authors._id === req.params.id
+      (blogs) => blogs._id === req.params.id
     );
     if (!authorIndex == -1) {
       res
@@ -107,11 +108,11 @@ router.put("/:id", async (req, res, next) => {
       _id: req.params.id,
     };
     fileAsJson[authorIndex] = updatedData;
-    fs.writeFileSync(authorsJsonPath, JSON.stringify(fileAsJson));
+    fs.writeFileSync(blogsJsonPath, JSON.stringify(fileAsJson));
     res.send(updatedData);
   } catch (error) {
     res.sendStatus(status);
   }
 });
 
-export default router;
+export default router
